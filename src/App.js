@@ -20,7 +20,7 @@ function App() {
         <p className="subtitle">Scratch to reveal your reward</p>
 
         <div className="scratch-card-wrapper">
-          <ScratchCard ref={scratchCardRef} width={320} height={320} coverColor="#2c3e50" onComplete={() => setIsCompleted(true)}>
+          <ScratchCard ref={scratchCardRef} width={280} height={280} coverColor="#4A4A4A" onComplete={() => setIsCompleted(true)}>
             <div className="coupon-card-inner">
               <h2>You Won</h2>
               <div className="coupon-amount-large">₹50</div>
@@ -32,7 +32,22 @@ function App() {
         </div>
 
         {isCompleted && (
-          <button className="reset-btn" onClick={handleReset}>Scratch Again</button>
+          <div className="coupon-info">
+            <h3>Coupon Details</h3>
+            <div className="info-item">
+              <span className="info-label">Amount</span>
+              <span className="info-value">₹50</span>
+            </div>
+            <div className="info-item">
+              <span className="info-label">Type</span>
+              <span className="info-value">Paytm Cash</span>
+            </div>
+            <div className="info-item">
+              <span className="info-label">Valid Till</span>
+              <span className="info-value">30 Days</span>
+            </div>
+            <button className="reset-btn" onClick={handleReset}>Scratch Again</button>
+          </div>
         )}
       </div>
     </div>
